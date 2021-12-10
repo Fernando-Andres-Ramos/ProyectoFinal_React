@@ -1,7 +1,7 @@
 *{
   margin:0%;
 }
-.Conteiner-NavBar{
+.ConteinerNavBar{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -30,7 +30,7 @@
   list-style-type: none;
 }
 
-.Nav-List{
+.NavList{
   height: auto;
   margin-top: 75px;
   display: flex;
@@ -40,7 +40,7 @@
   color: #5968df;
 }
 
-.Nav-List_link{
+.NavList_link{
   text-decoration: none;
   font-size: 20px;
 }

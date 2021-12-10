@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar/NavBar';
+import {NavBar} from './components/NavBar/NavBar';
 // import IMAGES from './assets/images/images';
 // import CustomImage from './components/CustomImage/CustomImage';
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       {/* <CustomImage {...IMAGES.img1}/> */}
     </div>
   );
