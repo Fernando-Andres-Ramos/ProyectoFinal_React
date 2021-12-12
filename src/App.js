@@ -1,4 +1,5 @@
-import {NavBar} from './components/NavBar/NavBar';
+import React from 'react';
+import { NavBar } from './components/NavBar/NavBar';
 // import IMAGES from './assets/images/images';
 // import CustomImage from './components/CustomImage/CustomImage';
 

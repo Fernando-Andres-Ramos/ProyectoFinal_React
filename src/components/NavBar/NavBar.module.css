@@ -1,7 +1,7 @@
 *{
   margin:0%;
 }
-.ConteinerNavBar{
+.Conteiner{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
