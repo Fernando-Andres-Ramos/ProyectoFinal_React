@@ -1,10 +1,10 @@
-// // import imagew1 from './w1'
+import imagew1 from './w1.svg'
 
-// const IMAGES = {
-//   img1:{
-//     img: imagew1,
-//     name: 'wallpaper 1'
-//   }
-// }
+const ImageCarrito = {
+  img1:{
+  img: imagew1,
+  name: 'Imagen carrito 1'
+  }
+}
 
-// export default IMAGES
+export default ImageCarrito;

@@ -1,18 +1,13 @@
 import React from 'react';
 import { NavBar } from './components/NavBar/NavBar';
-// import IMAGES from './assets/images/images';
-// import CustomImage from './components/CustomImage/CustomImage';
-
-// const arrImg=[
-//   IMAGES.img1
-// ]
+import { CardWidget } from './components/CardWidget/CardWidget';
 
 function App() {
 
   return (
     <div>
       <NavBar />
-      {/* <CustomImage {...IMAGES.img1}/> */}
+      <CardWidget />
     </div>
   );
 }
