@@ -1,4 +1,5 @@
 import React from 'react';
+import { CardWidget } from '../CardWidget/CardWidget';
 import style from './NavBar.module.css';
 
 export function NavBar() {
@@ -13,7 +14,7 @@ export function NavBar() {
           <ul className={style.OpcionesDeUsuario}>
             <li><a className={style.NavList_link} href="./">Log in</a></li>
             <li><a className={style.NavList_link} href="./">Sign up</a></li>
-            <li><a className={style.NavList_link} href="./">Carrito</a></li>
+            <li><button style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></button></li>
           </ul>
         </div>
         <ul className={style.NavList}>
