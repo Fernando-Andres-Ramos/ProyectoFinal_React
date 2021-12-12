@@ -1,0 +1,11 @@
+.container{
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text{
+  color: #009C8C;
+  font-size: 2rem;
+}
