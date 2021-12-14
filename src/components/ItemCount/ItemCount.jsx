@@ -1,19 +1,25 @@
 import React,{ useState, useEffect} from "react";
+import styles from './ItemCount.module.css'
 
+function onAdd(){
+
+}
 
 export function ItemCount({stock,initial,onAdd}){
-
   const[contador,setContador] = useState(parseInt(initial));
-
+  
+  useEffect(()=>{
+    console.log("estoy haciendo cambios");
+  },[contador]);
   return(
-    <>
-      <div>
-        <button id="BotonRestar" style={{cursor:"pointer"}} onClick={()=>setContador(contador-1)}>-</button>
+    <div className={styles.ItemCountContainer}>
+      <div className={styles.controles}>
+        <button className={styles.botonRestar} style={{cursor:"pointer"}} onClick={()=>setContador(contador-1)}>-</button>
         <p>{contador}</p>
-        <button id="BotonSumar" style={{cursor:"pointer"}} onClick={()=>setContador(contador+1)}>+</button>
+        <button className={styles.botonSumar} style={{cursor:"pointer"}} onClick={()=>setContador(contador+1)}>+</button>
       </div>
-      <button style={{cursor:"pointer"}}>Agregar al carrito</button>
-      <p>Cantidad en Stock: {stock}</p>
-    </>
+      <button className={styles.botonAdd} style={{cursor:"pointer"}}>Agregar al carrito</button>
+      <p style={{width:'100%'}}>Cantidad en Stock: {stock}</p>
+    </div>
   );
 }
