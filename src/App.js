@@ -28,18 +28,26 @@ const PRODUCTOS = [{
   price: 9000,
 }]
 
-
-
-function App() {
-
+function Home (){
   const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)';
-
-  return (
-    <div>
+  return(
+    <React.Fragment>
       <NavBar />
       <ItemListContainer text={Mensaje}/>
       <ItemCount stock="5" initial="1"/>
-    </div>
+    </React.Fragment>
+  );
+}
+
+function App() {
+
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/Home" element={<Home />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
