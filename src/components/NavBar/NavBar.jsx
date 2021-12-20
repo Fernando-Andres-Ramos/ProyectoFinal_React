@@ -10,19 +10,19 @@ export function NavBar() {
       <h1 className={style.Titulo}>1d10 Games</h1>
         <nav className={style.Nav}>
         <div style={{display:'flex',justifyContent:'space-between'}}>
-          <a style={{fontSize:30,textDecoration:'none'}} href="./">Inicio</a>
+          <a style={{fontSize:30,textDecoration:'none'}} href="/Home">Inicio</a>
           <ul className={style.OpcionesDeUsuario}>
-            <li><a className={style.NavList_link} href="./">Log in</a></li>
-            <li><a className={style.NavList_link} href="./">Sign up</a></li>
+            <li><a className={style.NavList_link} href="/Home">Log in</a></li>
+            <li><a className={style.NavList_link} href="/Home">Sign up</a></li>
             <li><button style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></button></li>
           </ul>
         </div>
         <ul className={style.NavList}>
-          <li><a className={style.NavList_link} href="./">Juegos de mesa</a></li>
-          <li><a className={style.NavList_link} href="./">Cartas</a></li>
-          <li><a className={style.NavList_link} href="./">Miniaturas</a></li>
-          <li><a className={style.NavList_link} href="./">Preventas y Ofertas</a></li>
-          <li><a className={style.NavList_link} href="./">Contacto</a></li>
+          <li><a className={style.NavList_link} href="/Home">Juegos de mesa</a></li>
+          <li><a className={style.NavList_link} href="/Home">Cartas</a></li>
+          <li><a className={style.NavList_link} href="/Home">Miniaturas</a></li>
+          <li><a className={style.NavList_link} href="/Home">Preventas y Ofertas</a></li>
+          <li><a className={style.NavList_link} href="/Home">Contacto</a></li>
         </ul>
       </nav>
     </div>

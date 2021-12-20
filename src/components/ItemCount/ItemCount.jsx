@@ -1,25 +1,32 @@
-import React,{ useState, useEffect} from "react";
+import React,{ useState} from "react";
 import styles from './ItemCount.module.css'
 
-function onAdd(){
-
-}
-
-export function ItemCount({stock,initial,onAdd}){
+export function ItemCount({stock,initial=1,onAdd}){
   const[contador,setContador] = useState(parseInt(initial));
   
-  useEffect(()=>{
-    console.log("estoy haciendo cambios");
-  },[contador]);
+  function botonSumar (){
+    if (contador<stock)
+    {
+      setContador(contador+1)
+    }
+  }
+
+  function botonRestar (){
+    if (contador>0)
+    {
+      setContador(contador-1)
+    }
+  }
+
   return(
     <div className={styles.ItemCountContainer}>
       <div className={styles.controles}>
-        <button className={styles.botonRestar} style={{cursor:"pointer"}} onClick={()=>setContador(contador-1)}>-</button>
+        <button className={styles.botonRestar} style={{cursor:"pointer"}} onClick={botonRestar} disabled={contador<=0}>-</button>
         <p>{contador}</p>
-        <button className={styles.botonSumar} style={{cursor:"pointer"}} onClick={()=>setContador(contador+1)}>+</button>
+        <button className={styles.botonSumar} style={{cursor:"pointer"}} onClick={botonSumar} disabled={contador>=stock}>+</button>
+        <button onClick={()=>onAdd(contador)} className={styles.botonAdd} style={{cursor:"pointer"}} disabled={contador>stock || contador<=0}>Agregar al carrito</button>
       </div>
-      <button className={styles.botonAdd} style={{cursor:"pointer"}}>Agregar al carrito</button>
-      <p style={{width:'100%'}}>Cantidad en Stock: {stock}</p>
+      <p style={{width:'100%'}}>Cantidad en Stock: {stock-contador}</p>
     </div>
   );
 }
