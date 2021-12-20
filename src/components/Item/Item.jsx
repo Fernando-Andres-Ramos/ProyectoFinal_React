@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Item.module.css'
 
-export const Product = ({id, title, description, price, pictureURL}) => {
+export const Item = ({id, title, description, price, pictureURL}) => {
   return (
     <div className={styles.product}>
       <div>

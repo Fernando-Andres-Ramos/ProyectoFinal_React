@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
 import { ItemCount } from './components/ItemCount/ItemCount';
-import { Product } from './components/Item/Item';
+import { Item } from './components/Item/Item';
 import { DatosProductos } from './mocks/DatosProductos';
+import { ItemList } from './components/ItemList/ItemList';
 
 
 //Lista de información de producto para el desafio 5
@@ -50,7 +51,7 @@ const Item1 = ({title, price, stock}) => {
 
 function Home (){
   const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)';
-  
+
     //Promesa para el desafio 6
     const [misProductos, setmisProductos] = useState (null);
 
@@ -89,8 +90,9 @@ function Home (){
         {productosEnVenta.map(item => <Item1 key={item.id}{...item}/>)}
       </div>
       <div>
-        {misProductos ? misProductos.map(producto => <Product {...producto} />) : <span>Cargando productos...</span>}
+        {misProductos ? misProductos.map(producto => <Item {...producto} />) : <span>Cargando productos...</span>}
       </div>
+
     </React.Fragment>
   );
 }
