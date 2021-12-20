@@ -1,0 +1,33 @@
+.product {
+  width: 150px;
+  padding: 10px;  
+  border: 1px solid #eee;
+  background-color: aliceblue;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product div:nth-child(1) img {
+  width: 150px;  
+  height: 150px;
+  border-radius: 3px;
+}
+
+.product div:nth-child(2) {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product div:nth-child(2) h5 {
+  font-size: 25px;
+}
+
+.product div:nth-child(2) h6 {
+  font-size: 20px;
+  color: #ccc;
+}
