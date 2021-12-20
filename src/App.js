@@ -1,12 +1,10 @@
-import React, { useState,useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
 import { ItemCount } from './components/ItemCount/ItemCount';
-import { Item } from './components/Item/Item';
 import { DatosProductos } from './mocks/DatosProductos';
 import { ItemList } from './components/ItemList/ItemList';
-
 
 //Lista de información de producto para el desafio 5
 const productosEnVenta = [{
@@ -48,38 +46,8 @@ const Item1 = ({title, price, stock}) => {
   )
 }
 
-
 function Home (){
-  const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)';
-
-    //Promesa para el desafio 6
-    const [misProductos, setmisProductos] = useState (null);
-
-    useEffect(() => {
-      PromesaProductos();
-    },[])
-
-    function getProductos (){
-      return new Promise ((resolve,reject)=>{
-        setTimeout(()=>{
-          if (DatosProductos)
-            resolve (DatosProductos)
-          else 
-            reject (new Error ('Error en getProductos'))
-        },2000)
-      })
-    }
-  
-    function PromesaProductos () {
-      getProductos().then(
-        response => {
-          console.log(`Promesa resuelta`, response)
-          setmisProductos(response)
-        },
-        error => console.log(`Promesa rechazada`,error)
-      )
-      .catch(error=>console.log(`ERROR`,'Algo salio mal',error))
-    }
+  const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
 
   return(
     <React.Fragment>
@@ -89,10 +57,7 @@ function Home (){
         <h2 style={{margin:'100px',textAlign:'center'}}>Indique la cantidad que desea comprar</h2>
         {productosEnVenta.map(item => <Item1 key={item.id}{...item}/>)}
       </div>
-      <div>
-        {misProductos ? misProductos.map(producto => <Item {...producto} />) : <span>Cargando productos...</span>}
-      </div>
-
+      {/* <ItemList Datos={DatosProductos}/> */}
     </React.Fragment>
   );
 }
