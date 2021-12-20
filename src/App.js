@@ -33,6 +33,8 @@ const productosEnVenta = [{
   stock: 5
 }]
 
+
+
 const Item1 = ({title, price, stock}) => {
   function mostrarConsola (cantidad) {
     console.log(`Agregaste al carrito ${cantidad}u. de ${title}. Por un valor de ${cantidad*price}$`)
@@ -57,7 +59,7 @@ function Home (){
         <h2 style={{margin:'100px',textAlign:'center'}}>Indique la cantidad que desea comprar</h2>
         {productosEnVenta.map(item => <Item1 key={item.id}{...item}/>)}
       </div>
-      {/* <ItemList Datos={DatosProductos}/> */}
+      <ItemList Datos={DatosProductos}/>
     </React.Fragment>
   );
 }

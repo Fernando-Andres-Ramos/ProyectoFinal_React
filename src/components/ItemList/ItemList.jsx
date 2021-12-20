@@ -1,4 +1,4 @@
-import React , {useState,useEffect} from "react";
+import React , {useState, useEffect} from "react";
 import styles from './ItemList.module.css'
 import { Item } from "../Item/Item";
 
@@ -7,7 +7,7 @@ import { Item } from "../Item/Item";
 
 
 
-export const ItemList = (Items) =>{
+export function ItemList (Items){
       const [misProductos, setmisProductos] = useState (null);
 
       useEffect(() => {
@@ -29,13 +29,14 @@ export const ItemList = (Items) =>{
         getProductos().then(
           response => {
             console.log(`Promesa resuelta`, response)
-            setmisProductos(response)
+            setmisProductos(response.Datos)
           },
           error => console.log(`Promesa rechazada`,error)
         )
         .catch(error=>console.log(`ERROR`,'Algo salio mal',error))
       }
-      
+    
+
     return (
       <div>
         { misProductos ? misProductos.map(producto => <Item {...producto} />) : <span>Cargando productos...</span>}

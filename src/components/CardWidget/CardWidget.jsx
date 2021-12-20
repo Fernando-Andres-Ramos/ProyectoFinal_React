@@ -1,5 +1,5 @@
 import React from "react";
-import ImageCarrito from "../../assets/images/images";
+import {ImageCarrito} from "../../assets/images/images";
 import { Carrito } from "../ImgCarrito/ImgCarrito";
 import styles from './CardWidget.module.css'
 
