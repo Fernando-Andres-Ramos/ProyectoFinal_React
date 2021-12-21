@@ -1,30 +1,32 @@
 import React, {useState, useEffect } from "react"
+import styles from "./ItemDetailContainer.module.css"
 import { DatosProductos } from "../../mocks/DatosProductos"
+import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
 
 
 
 export function ItemDetailContainer(){
-
+  const buscar = 2
   const [ ItemElegido, setItemElegido] = useState (null)
-
-
-  // useEffect(() => {
-  //   useItem()
-  // },[])
+  useEffect(() => {
+    promesaItem()
+  },[])
 
   const getItem = () =>{
-    const buscar = 1
     return new Promise ((resolve,reject)=>{
       setTimeout(()=>{
-        if (DatosProductos.find(element=>element.id=buscar))
-          resolve (DatosProductos.id=buscar)
+        if (DatosProductos){
+          const ProductoEncontrado = DatosProductos.find(element=>element.id===buscar)
+          resolve (ProductoEncontrado)
+          console.log([resolve])
+        }
         else 
           reject (new Error ('Error en getItem'))
-      },2000)
+      },4000)
     })
   }
 
-  function useItem () {
+  function promesaItem () {
     getItem().then(
       response => {
         console.log(`Promesa resuelta`, response)
@@ -37,8 +39,8 @@ export function ItemDetailContainer(){
 
 
   return (
-    <div>
-      {console.log("Algo")}
+    <div className={styles.container}>
+      {ItemElegido?<ItemDetail dato={ItemElegido}/>:<span style={{fontSize:'35px',marginBottom:'3rem'}}>Buscando información</span>}
     </div>
   );
 }

@@ -56,12 +56,12 @@ function Home (){
     <React.Fragment>
       <NavBar />
       <ItemListContainer/>
-      <ItemDetailContainer/>
       <div style={{display:'flex', flexDirection:'row', justifyContent:'center',border:'1px solid green'}}>
         <h2 style={{margin:'100px',textAlign:'center'}}>Indique la cantidad que desea comprar</h2>
         {productosEnVenta.map(item => <Item1 key={item.id}{...item}/>)}
       </div>
       <ItemList Datos={DatosProductos}/>
+      <ItemDetailContainer/>
     </React.Fragment>
   );
 }
