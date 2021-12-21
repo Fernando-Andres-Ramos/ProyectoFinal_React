@@ -36,10 +36,10 @@ export function ItemList (Items){
         .catch(error=>console.log(`ERROR`,'Algo salio mal',error))
       }
     
-
+      console.log(misProductos)
     return (
-      <div>
-        { misProductos ? misProductos.map(producto => <Item {...producto} />) : <span>Cargando productos...</span>}
+      <div className={styles.itemListContainer}>
+        { misProductos ? misProductos.map(producto => <Item key={producto.id}{...producto} />) : <span style={{fontSize:'35px',marginBottom:'3rem'}}>Cargando detalle de productos...</span>}
       </div>
   );
 }
