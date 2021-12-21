@@ -5,6 +5,7 @@ import { ItemListContainer } from './containers/ItemListContainer/ItemListCointa
 import { ItemCount } from './components/ItemCount/ItemCount';
 import { DatosProductos } from './mocks/DatosProductos';
 import { ItemList } from './components/ItemList/ItemList';
+import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 
 //Lista de información de producto para el desafio 5
 const productosEnVenta = [{
@@ -49,12 +50,13 @@ const Item1 = ({title, price, stock}) => {
 }
 
 function Home (){
-  const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
+  // const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
 
   return(
     <React.Fragment>
       <NavBar />
       <ItemListContainer/>
+      <ItemDetailContainer/>
       <div style={{display:'flex', flexDirection:'row', justifyContent:'center',border:'1px solid green'}}>
         <h2 style={{margin:'100px',textAlign:'center'}}>Indique la cantidad que desea comprar</h2>
         {productosEnVenta.map(item => <Item1 key={item.id}{...item}/>)}
