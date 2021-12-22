@@ -49,17 +49,15 @@ const Item1 = ({title, price, stock}) => {
 }
 
 export function Home (){
-  // const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
-
+  const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
   return(
     <React.Fragment>
       <NavBar />
-      <ItemListContainer/>
+      <ItemListContainer text={Mensaje}/>
       <div style={{display:'flex', flexDirection:'row', justifyContent:'center',border:'1px solid green'}}>
         <h2 style={{margin:'100px',textAlign:'center'}}>Indique la cantidad que desea comprar</h2>
         {productosEnVenta.map(item => <Item1 key={item.id}{...item}/>)}
       </div>
-      <ItemList Datos={DatosProductos}/>
       <ItemDetailContainer/>
     </React.Fragment>
   );
