@@ -5,13 +5,14 @@ export const Item = ({id, title, description, price, pictureURL}) => {
   return (
     <div className={styles.product}>
       <div>
-        <img src={pictureURL} alt={title} />
+        <img className={styles.imgProductos} src={pictureURL}/>
       </div>
-      <div>
-        <h3>{title}</h3>
-        <span>{description}</span>
-        <h5>${price}</h5>
-      </div>      
+      <div className={styles.infoProducto}>
+        <h3 className={styles.subtituloProduct}>{title}</h3>
+        <p>{description}</p>
+        <h4 className={styles.precio}>${price}</h4>
+      </div>
+      <button style={{cursor:"pointer"}} className={styles.botonDetalles}>Ver mas detalles aqui</button>      
     </div>
   )
 }

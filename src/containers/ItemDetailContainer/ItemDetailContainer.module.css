@@ -1,13 +1,8 @@
 .container{
-  margin-top: 2.5rem;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  background-color: aqua;
 }
 
-.text{
-  color: #009C8C;
-  font-size: 2rem;
-  margin-bottom: 100px;
-}

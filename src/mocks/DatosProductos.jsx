@@ -2,28 +2,28 @@ export const DatosProductos = [{
   id: 1,
   title: "Ajedrez",
   description:"Juego de mesa de estrategia, 32 piezas",
-  img: 'https://pbs.twimg.com/media/DR37eAoW4AAqRPI.jpg',
+  pictureURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Chess_board_with_chess_set_in_opening_position_2012_PD_03.jpg/1200px-Chess_board_with_chess_set_in_opening_position_2012_PD_03.jpg",
   price: 500,
   stock: 15
 },{
   id:2,
   title:"Cartas",
   description: "Juego de cartas con 50 unidades",
-  img: 'https://i.pinimg.com/originals/3e/90/8e/3e908ede0b7cddacc35ff0d0aeb55fe3.gif',
+  pictureURL:"https://http2.mlstatic.com/D_NQ_NP_730111-MLA46598736486_072021-O.webp",
   price: 300,
   stock: 20
 },{
   id:3,
-  title: "Shenga",
+  title: "Jenga",
   description:"Juego de bloques con 50 piezas",
-  img: 'https://ih1.redbubble.net/image.38456508.9561/raf,750x1000,075,t,469C4A:e72f2495dd.jpg',
+  pictureURL:"https://m.media-amazon.com/images/I/71Df1l5bb1L._AC_SL1024_.jpg",
   price: 400,
   stock: 10
 },{
   id:4,
   title: "Monopoly",
   description: "El famoso juego Monopoly",
-  img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo-ICeSIG1qbWiImzJ2ptQRx3WuCRyNod7O7yOq1lXRXxp3KRTsEfBla0ccIsiprky3Tk&usqp=CAU',
+  pictureURL:"https://jugueteriaelpehuen.com.ar/images/productos/1570897103630509528134.jpg",
   price: 9000,
   stock: 5
 }]
