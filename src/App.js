@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
 // import { Home } from './pages/Home/Home';
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/category/:id" element={<ItemListContainer text={Mensaje}/>}/>
         <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
       </Routes>
+    <Footer />
     </BrowserRouter>
   );
 }
