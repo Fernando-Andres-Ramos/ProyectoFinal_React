@@ -28,7 +28,7 @@ function App() {
     <NavBar />
       <Routes>
         <Route exact path="/" element={<ItemListContainer text={Mensaje}/>}/>
-        <Route exact path="/category/:id" element={<ItemListContainer text={Mensaje}/>}/>
+        <Route exact path="/category/:categoryid" element={<ItemListContainer text={Mensaje}/>}/>
         <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
       </Routes>
     <Footer />

@@ -11,7 +11,7 @@ export function ItemDetailContainer(){
 
   const {id} = useParams()
   useEffect(()=>{
-    console.log("La ID es" + id)
+    console.log("La ID es " + id)
   },[id])
 
   useEffect(() => {
@@ -24,7 +24,6 @@ export function ItemDetailContainer(){
         if (DatosProductos){
           const ProductoEncontrado = DatosProductos.find(element=>element.id == id)
           resolve (ProductoEncontrado)
-          console.log([resolve])
         }
         else 
           reject (new Error ('Error en getItem'))

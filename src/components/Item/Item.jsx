@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Item.module.css'
 import { NavLink } from 'react-router-dom'
 
-export const Item = ({id, title, description, price, pictureURL}) => {
+export const Item = ({id, title, description, price, pictureURL,cattegory}) => {
   return (
     <div className={styles.product}>
       <div>
