@@ -24,7 +24,6 @@ export function ItemListContainer(greetings){
   function PromesaProductos () {
     getProductos().then(
       response => {
-        console.log(`Promesa resuelta`, response)
         setmisProductos(response)
       },
       error => console.log(`Promesa rechazada`,error)

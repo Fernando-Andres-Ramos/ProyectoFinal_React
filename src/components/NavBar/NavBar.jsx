@@ -10,7 +10,7 @@ export function NavBar() {
       <h1 className={style.Titulo}>1d10 Games</h1>
         <nav className={style.Nav}>
         <div style={{display:'flex',justifyContent:'space-between'}}>
-          <a style={{fontSize:30,textDecoration:'none'}} href="/Home">Inicio</a>
+          <a style={{fontSize:30,textDecoration:'none'}} href="/">Inicio</a>
           <ul className={style.OpcionesDeUsuario}>
             <li><a className={style.NavList_link} href="/Home">Log in</a></li>
             <li><a className={style.NavList_link} href="/Home">Sign up</a></li>

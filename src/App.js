@@ -1,12 +1,11 @@
-import React , {useState} from 'react';
+import React from 'react';
+// import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
-import { Home } from './pages/Home/Home';
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
-import { cartContext } from './context/cartContext';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
-
-
+// import { Home } from './pages/Home/Home';
+// import { cartContext } from './context/cartContext';
 
 // const [state,setState] = useState[("test")]
 // return(
@@ -17,13 +16,18 @@ import { ItemListContainer } from './containers/ItemListContainer/ItemListCointa
 //   </>
 // )
 
+
+const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
+
+
+
 function App() {
   return (
     <BrowserRouter>
     <NavBar />
       <Routes>
-        <Route exact path="/" element={<Home />}/>
-        <Route exact path="/category/:id" element={<Home/>}/>
+        <Route exact path="/" element={<ItemListContainer text={Mensaje}/>}/>
+        <Route exact path="/category/:id" element={<ItemListContainer text={Mensaje}/>}/>
         <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
       </Routes>
     </BrowserRouter>
