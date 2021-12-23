@@ -5,16 +5,30 @@
   align-items: center;
   text-align: justify;
   margin: 20px 5px;
-  width: 300px;
+  width: 20%;
   height: 600px;
   background-color: white;
   border: 1px inset;
 }
 
 .imgProductos{
-  width: 300px;
-  height: 250px;
+  width: 250px;
+  height: 200px;
   border-bottom: 1px solid grey;
+}
+
+@media (max-width: 1100px) {
+  .imgProductos{
+    width: 175px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .imgProductos{
+    width: 100px;
+    height: 75px;
+  }
 }
 
 .infoProducto{
