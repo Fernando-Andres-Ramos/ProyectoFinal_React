@@ -46,7 +46,7 @@ export function ItemDetailContainer(){
 
   return (
     <div className={styles.container}>
-      {ItemElegido?<ItemDetail dato={ItemElegido}/>:<span style={{fontSize:'35px',marginBottom:'3rem'}}>Buscando información</span>}
+      {ItemElegido?<ItemDetail dato={ItemElegido}/>:<span className={styles.loadingText}>Buscando información</span>}
     </div>
   );
 }
