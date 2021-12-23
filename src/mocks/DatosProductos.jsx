@@ -8,7 +8,7 @@ export const DatosProductos = [{
   category:"JuegoDeMesa"
 },{
   id:2,
-  title:"Cartas",
+  title:"Cartas Españolas",
   description: "Juego de cartas con 50 unidades",
   pictureURL:"https://http2.mlstatic.com/D_NQ_NP_730111-MLA46598736486_072021-O.webp",
   price: 300,
@@ -30,4 +30,36 @@ export const DatosProductos = [{
   price: 9000,
   stock: 5,
   category:"JuegoDeMesa"
+},{
+  id:5,
+  title: "Cartas de Poker",
+  description: "Cartas de poker exclusivas",
+  pictureURL:"https://http2.mlstatic.com/D_NQ_NP_926108-MLA43124683462_082020-O.webp",
+  price: 450,
+  stock: 12,
+  category:"JuegoDeCartas"
+},{
+  id:6,
+  title: "Darkest Dungeon: The board game",
+  description: "Juego Rogue-like con 64 miniaturas, 20 dados y mas de 800 cartas",
+  pictureURL:"https://cf.geekdo-images.com/k_JONJZe2vumR0FLCaiExQ__opengraph/img/cNPR2PyS0lQJD1EkSJ1Ck3oQf18=/fit-in/1200x630/filters:strip_icc()/pic5634524.png",
+  price: 18000,
+  stock: 3,
+  category:"JuegoDeMesa"
+},{
+  id:7,
+  title: "Miniatura Esqueleto",
+  description: "Miniatura de soldado esqueleto para juegos de rol. Altura: 75mm",
+  pictureURL:"https://http2.mlstatic.com/D_NQ_NP_859034-MLA43761957453_102020-O.webp",
+  price: 700,
+  stock: 8,
+  category:"Miniaturas"
+},{
+  id:8,
+  title: "Miniatura Dragon",
+  description: "Miniatura de dragon para juegos de rol. Altura 100mm",
+  pictureURL:"https://http2.mlstatic.com/D_NQ_NP_693476-MLA29178963116_012019-O.webp",
+  price: 850,
+  stock: 5,
+  category:"Miniaturas"
 }]
