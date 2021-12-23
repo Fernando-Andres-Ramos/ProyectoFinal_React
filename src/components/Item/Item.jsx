@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Item.module.css'
+import { NavLink } from 'react-router-dom'
 
 export const Item = ({id, title, description, price, pictureURL}) => {
   return (
@@ -12,7 +13,9 @@ export const Item = ({id, title, description, price, pictureURL}) => {
         <p>{description}</p>
         <h4 className={styles.precio}>${price}</h4>
       </div>
-      <button style={{cursor:"pointer"}} className={styles.botonDetalles}>Ver mas detalles aqui</button>      
+      <button style={{cursor:"pointer"}} className={styles.botonDetalles}>
+        <NavLink to={`/item/${id}`}>Ver mas detalles aqui</NavLink>
+      </button>      
     </div>
   )
 }

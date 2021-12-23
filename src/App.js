@@ -1,6 +1,5 @@
 import React from 'react';
-// import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
@@ -19,9 +18,10 @@ import { ItemListContainer } from './containers/ItemListContainer/ItemListCointa
 
 const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
 
-
-
 function App() {
+
+
+
   return (
     <BrowserRouter>
     <NavBar />

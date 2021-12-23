@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import styles from "./ItemDetailContainer.module.css"
 import { DatosProductos } from "../../mocks/DatosProductos"
 import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
@@ -6,8 +7,13 @@ import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
 
 
 export function ItemDetailContainer(){
-  const buscar = 2
   const [ ItemElegido, setItemElegido] = useState (null)
+
+  const {id} = useParams()
+  useEffect(()=>{
+    console.log("La ID es" + id)
+  },[id])
+
   useEffect(() => {
     promesaItem()
   },[])
@@ -16,13 +22,13 @@ export function ItemDetailContainer(){
     return new Promise ((resolve,reject)=>{
       setTimeout(()=>{
         if (DatosProductos){
-          const ProductoEncontrado = DatosProductos.find(element=>element.id===buscar)
+          const ProductoEncontrado = DatosProductos.find(element=>element.id == id)
           resolve (ProductoEncontrado)
           console.log([resolve])
         }
         else 
           reject (new Error ('Error en getItem'))
-      },4000)
+      },1000)
     })
   }
 

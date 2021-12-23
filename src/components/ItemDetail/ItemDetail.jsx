@@ -14,7 +14,7 @@ export const ItemDetail = (item) => {
         <p>{item.dato.description}</p>
         <h4 className={styles.precio}>${item.dato.price}</h4>
         <h6 className={styles.stock}>Stock:{item.dato.stock}</h6>
-        <div style={{textAlign:'center',margin:'5px',border:'1px solid aqua',width:'100%',color:'#009C8C', fontSize:'20px'}}>
+        <div>
           <ItemCount stock={item.dato.stock} onAdd={count => console.log(`Agregaste al carrito ${count}u. de ${item.dato.title}. Por un valor de ${count*item.dato.price}$`)}/>
         </div>
       </div>

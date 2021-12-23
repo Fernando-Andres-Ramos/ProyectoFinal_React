@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CardWidget } from '../CardWidget/CardWidget';
 import style from './NavBar.module.css';
+
 
 export function NavBar() {
   /*Logica*/
@@ -10,7 +12,7 @@ export function NavBar() {
       <h1 className={style.Titulo}>1d10 Games</h1>
         <nav className={style.Nav}>
         <div style={{display:'flex',justifyContent:'space-between'}}>
-          <a style={{fontSize:30,textDecoration:'none'}} href="/">Inicio</a>
+          <Link  to={`/`} style={{fontSize:30,textDecoration:'none'}}>Inicio</Link>
           <ul className={style.OpcionesDeUsuario}>
             <li><a className={style.NavList_link} href="/Home">Log in</a></li>
             <li><a className={style.NavList_link} href="/Home">Sign up</a></li>
