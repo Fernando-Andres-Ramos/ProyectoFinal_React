@@ -20,13 +20,13 @@ export function ItemCount({stock,initial=1,onAdd}){
 
   return(
     <div className={styles.ItemCountContainer}>
+      <p  className={styles.textStock}>Cantidad en Stock: {stock-contador}</p>
       <div className={styles.controles}>
         <button className={styles.botonRestar} style={{cursor:"pointer"}} onClick={botonRestar} disabled={contador<=0}>-</button>
         <p>{contador}</p>
         <button className={styles.botonSumar} style={{cursor:"pointer"}} onClick={botonSumar} disabled={contador>=stock}>+</button>
         <button onClick={()=>onAdd(contador)} className={styles.botonAdd} style={{cursor:"pointer"}} disabled={contador>stock || contador<=0}>Agregar al carrito</button>
       </div>
-      <p style={{width:'100%'}}>Cantidad en Stock: {stock-contador}</p>
     </div>
   );
 }

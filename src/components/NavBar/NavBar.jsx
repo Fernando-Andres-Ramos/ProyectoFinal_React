@@ -1,6 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { CardWidget } from '../CardWidget/CardWidget';
 import style from './NavBar.module.css';
+
 
 export function NavBar() {
   /*Logica*/
@@ -10,7 +12,7 @@ export function NavBar() {
       <h1 className={style.Titulo}>1d10 Games</h1>
         <nav className={style.Nav}>
         <div style={{display:'flex',justifyContent:'space-between'}}>
-          <a style={{fontSize:30,textDecoration:'none'}} href="/Home">Inicio</a>
+          <NavLink  to={`/`} style={{fontSize:30,textDecoration:'none'}}>Inicio</NavLink>
           <ul className={style.OpcionesDeUsuario}>
             <li><a className={style.NavList_link} href="/Home">Log in</a></li>
             <li><a className={style.NavList_link} href="/Home">Sign up</a></li>
@@ -18,11 +20,11 @@ export function NavBar() {
           </ul>
         </div>
         <ul className={style.NavList}>
-          <li><a className={style.NavList_link} href="/Home">Juegos de mesa</a></li>
-          <li><a className={style.NavList_link} href="/Home">Cartas</a></li>
-          <li><a className={style.NavList_link} href="/Home">Miniaturas</a></li>
-          <li><a className={style.NavList_link} href="/Home">Preventas y Ofertas</a></li>
-          <li><a className={style.NavList_link} href="/Home">Contacto</a></li>
+          <li><NavLink to={`/category/JuegoDeMesa`} className={style.NavList_link}>Juegos de mesa</NavLink></li>
+          <li><NavLink to={`/category/JuegoDeCartas`} className={style.NavList_link}>Cartas</NavLink></li>
+          <li><NavLink to={`/category/Miniaturas`} className={style.NavList_link}>Miniaturas</NavLink></li>
+          <li><NavLink to={`/category/Ofertas`} className={style.NavList_link}>Preventas y Ofertas</NavLink></li>
+          <li><NavLink to={`/category/Contacto`} className={style.NavList_link}>Contacto</NavLink></li>
         </ul>
       </nav>
     </div>

@@ -1,10 +1,21 @@
 import React ,{useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import styles from './ItemListContainer.module.css';
 import { ItemList } from '../../components/ItemList/ItemList';
 import { DatosProductos } from '../../mocks/DatosProductos';
 
 export function ItemListContainer(greetings){
+
   const [misProductos, setmisProductos] = useState (null);
+
+  const {categoryid} = useParams();
+
+  useEffect(()=>{
+    console.log("La ID es " + categoryid)
+    setmisProductos(null);
+    PromesaProductos();
+  },[categoryid])
+
 
   useEffect(() => {
     PromesaProductos()
@@ -14,7 +25,15 @@ export function ItemListContainer(greetings){
     return new Promise ((resolve,reject)=>{
       setTimeout(()=>{
         if (DatosProductos)
-          resolve (DatosProductos)
+        {
+          if(categoryid)
+          {
+            const ProductosEncontrados = DatosProductos.filter(element => element.category === categoryid )
+            resolve (ProductosEncontrados)
+          }
+          else  
+            resolve(DatosProductos)
+        }
         else 
           reject (new Error ('Error en getProductos'))
       },2000)
@@ -24,7 +43,6 @@ export function ItemListContainer(greetings){
   function PromesaProductos () {
     getProductos().then(
       response => {
-        console.log(`Promesa resuelta`, response)
         setmisProductos(response)
       },
       error => console.log(`Promesa rechazada`,error)
