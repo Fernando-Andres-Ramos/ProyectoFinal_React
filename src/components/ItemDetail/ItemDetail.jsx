@@ -22,7 +22,7 @@ export const ItemDetail = (item) => {
       <div className={styles.imgAndCount}>
         <img className={styles.imgProductos} src={item.dato.pictureURL} alt={`Imagen de ${item.dato.title}`}/>
         {renderCompra?
-          <Link to={'/'} className={styles.botonConfirmar}>Confirmar compra</Link>:
+          <Link to={'/cart'} className={styles.botonConfirmar}>Confirmar compra</Link>:
           <ItemCount stock={item.dato.stock} onAdd={OnAdd}></ItemCount>}
       </div>
       <div className={styles.infoProducto}>

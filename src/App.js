@@ -4,6 +4,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
+import { CartContainer } from './containers/CartContainer/CartContainer';
 // import { Home } from './pages/Home/Home';
 // import { cartContext } from './context/cartContext';
 
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/" element={<ItemListContainer text={Mensaje}/>}/>
         <Route exact path="/category/:categoryid" element={<ItemListContainer text={Mensaje}/>}/>
         <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
+        <Route exact path="/cart" element={<CartContainer/>}/>
       </Routes>
     <Footer />
     </BrowserRouter>
