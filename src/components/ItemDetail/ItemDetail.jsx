@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ItemDetail.module.css"
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 
 export const ItemDetail = (item) => {
+
+  
+  const [renderCompra, setRenderCompra] = useState(false)
+  
+  function OnAdd(quantityToAdd) {
+    console.log(`Agregaste al carrito ${quantityToAdd}u. de ${item.dato.title}. Por un valor de ${quantityToAdd*item.dato.price}$`)
+    setRenderCompra(quantityToAdd)
+  }
+
+
   return (
-    <div className={styles.product}>
+
+    <>
+      <div className={styles.product}>
       <div className={styles.imgAndCount}>
         <img className={styles.imgProductos} src={item.dato.pictureURL} alt={`Imagen de ${item.dato.title}`}/>
-        <ItemCount stock={item.dato.stock} onAdd={count => console.log(`Agregaste al carrito ${count}u. de ${item.dato.title}. Por un valor de ${count*item.dato.price}$`)}/>
+        {renderCompra?
+          <Link to={'/cart'} className={styles.botonConfirmar}>Confirmar compra</Link>:
+          <ItemCount stock={item.dato.stock} onAdd={OnAdd}></ItemCount>}
       </div>
       <div className={styles.infoProducto}>
         <h3>Detalles del producto</h3>
@@ -19,5 +33,6 @@ export const ItemDetail = (item) => {
       </div>
       <Link to={`/`} className={styles.botonRegresar}>Volver</Link>      
     </div>
+    </> 
   )
 }
