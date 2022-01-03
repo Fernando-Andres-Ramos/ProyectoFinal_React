@@ -1,27 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
-import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
+import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { CartContainer } from './containers/CartContainer/CartContainer';
+import Footer from './components/Footer/Footer';
 // import { Home } from './pages/Home/Home';
 // import { cartContext } from './context/cartContext';
 
-// const [state,setState] = useState[("test")]
-// return(
-//   <>
-//     <cartContext.Provider value={state}>
-//       <ItemListContainer></ItemListContainer>
-//     </cartContext.Provider>
-//   </>
-// )
+export const ThemeContext = React.createContext();
+
 
 
 const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
 
-function App() {
+export function App() {
 
+  const [color, setColor] = useState("aqua")
 
 
   return (
@@ -33,9 +28,12 @@ function App() {
         <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
         <Route exact path="/cart" element={<CartContainer/>}/>
       </Routes>
-    <Footer />
+    <ThemeContext.Provider value={color}> 
+      <button onClick={()=>setColor("green")}>VERDE</button>
+      <button onClick={()=>setColor("red")}>ROJO</button>
+      <button onClick={()=>setColor("yellow")}>AMARILLO</button>
+      <Footer />
+    </ThemeContext.Provider>
     </BrowserRouter>
   );
 }
-
-export default App;
