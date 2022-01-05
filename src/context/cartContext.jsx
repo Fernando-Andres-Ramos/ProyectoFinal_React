@@ -30,9 +30,8 @@ export const CustomProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={[addItem,removeItem,clear,isInCart]}>
+        <CartContext.Provider value={[addItem,removeItem,clear,isInCart,items]}>
             {children}
-            {console.log(items)}
         </CartContext.Provider>
     )
 }

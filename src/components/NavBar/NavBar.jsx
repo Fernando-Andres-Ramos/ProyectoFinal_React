@@ -16,7 +16,7 @@ export function NavBar() {
           <ul className={style.OpcionesDeUsuario}>
             <li><a className={style.NavList_link} href="/Home">Log in</a></li>
             <li><a className={style.NavList_link} href="/Home">Sign up</a></li>
-            <li><button style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></button></li>
+            <li><NavLink to={`/cart`} style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></NavLink></li>
           </ul>
         </div>
         <ul className={style.NavList}>
