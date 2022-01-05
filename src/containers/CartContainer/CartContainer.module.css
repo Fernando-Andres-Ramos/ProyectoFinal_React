@@ -15,24 +15,26 @@
 .titulosColumnas{
   padding: 10px;
   width: 75%;
+  min-height: 500px;
   font-size: 1.3rem;
   display: flex;
   flex-flow: row wrap;
-  place-content: center space-between;
+  place-content: start space-between;
   border: 5px solid #009C8C;
   border-radius: 10px;
 }
 
 .detallesCompra{
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-flow: row wrap;
   place-content: center space-evenly;
 }
 
 .detail{
-  width: 40%;
+  width: 30%;
   text-align: center;
+  background-color: rgba(211, 211, 211, 0.575);
 } 
 
 .listaProductos{

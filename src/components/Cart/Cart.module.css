@@ -7,7 +7,7 @@
 }
 
 .miniDetalle{
-  max-width: 50%;
+  max-width: 35%;
   display: flex;
   flex-flow: column wrap;
   place-content: center start;
@@ -19,13 +19,27 @@
 }
 
 .numeros{
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-flow: row wrap;
   place-content: center space-evenly;
 }
 
 .detail{
-  width: 40%;
+  width: 30%;
   text-align: center;
 } 
+
+.buttonRemove{
+  width: 40px;
+  height: 40px;
+  border: 2px solid #6c757d;
+  border-radius: 100%;
+  background-color:#c7c7c7;
+  align-self: flex-start;
+}
+
+.buttonRemove:hover{
+  background-color: #dc3545;
+  border: 2px solid #dc3545;
+}

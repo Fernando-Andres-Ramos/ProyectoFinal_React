@@ -60,6 +60,14 @@
   color:white;
 }
 
+.botonesCompra{
+  width: 40%;
+  height: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: center space-evenly;
+}
+
 .botonConfirmar{
   width: 40%;
   height: 50px;
@@ -72,7 +80,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 }
+
 
 .botonConfirmar:hover{
   background-color: #27e28b;

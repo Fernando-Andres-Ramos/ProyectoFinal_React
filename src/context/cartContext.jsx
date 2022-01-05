@@ -17,7 +17,8 @@ export const CustomProvider = ({children}) => {
     }
 
     function removeItem(itemID){
-        console.log("Contexto removido")
+        let cartAux = items.filter(element=>element.item.dato.id!=itemID) 
+        setItems(cartAux)
     }
 
     function clear(){

@@ -4,7 +4,7 @@ import styles from './ItemListContainer.module.css';
 import { ItemList } from '../../components/ItemList/ItemList';
 import { DatosProductos } from '../../mocks/DatosProductos';
 
-export function ItemListContainer(greetings){
+export function ItemListContainer(){
 
   const [misProductos, setmisProductos] = useState (null);
 
@@ -51,7 +51,6 @@ export function ItemListContainer(greetings){
 
   return(
     <div className={styles.container}>
-      <h3 className={styles.text}>{greetings.text}</h3>
       <ItemList datos={misProductos}></ItemList>
     </div>
   )

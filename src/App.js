@@ -7,11 +7,6 @@ import { CartContainer } from './containers/CartContainer/CartContainer';
 import Footer from './components/Footer/Footer';
 import {CustomProvider} from './context/cartContext'
 
-
-
-
-const Mensaje ='¡Bienvenid@ a nuestra tienda! ¡Aqui podras comprar juegos de mesa, cartas y más! (Sitio en construcción)'
-
 export function App() {
 
   return (
@@ -19,8 +14,8 @@ export function App() {
       <CustomProvider>
         <NavBar />
           <Routes>
-            <Route exact path="/" element={<ItemListContainer text={Mensaje}/>}/>
-            <Route exact path="/category/:categoryid" element={<ItemListContainer text={Mensaje}/>}/>
+            <Route exact path="/" element={<ItemListContainer/>}/>
+            <Route exact path="/category/:categoryid" element={<ItemListContainer/>}/>
             <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route exact path="/cart" element={<CartContainer/>}/>
           </Routes>

@@ -11,7 +11,6 @@ import { CartContext } from "../../context/cartContext";
 export function CartContainer(){
   
   let [,,,,compra] = useContext (CartContext)
-  console.log(compra)
 
   return(
     <>
@@ -22,6 +21,7 @@ export function CartContainer(){
             <div className={styles.detallesCompra}>
               <p className={styles.detail}>Cantidad solicitada</p>
               <p className={styles.detail}>Precios a pagar</p>
+              <p className={styles.detail}>Quitar producto</p>
             </div>
           <div className={styles.listaProductos} >
             {compra.length!=0

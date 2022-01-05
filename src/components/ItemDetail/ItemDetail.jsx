@@ -22,9 +22,9 @@ export const ItemDetail = (item) => {
       <div className={styles.product}>
       <div className={styles.imgAndCount}>
         <img className={styles.imgProductos} src={item.dato.pictureURL} alt={`Imagen de ${item.dato.title}`}/>
-        {renderCompra?
-          <Link to={'/cart'} onClick={()=>addItem(item, renderCompra)} className={styles.botonConfirmar}>Confirmar compra</Link>:
-          <ItemCount stock={item.dato.stock} onAdd={OnAdd}></ItemCount>}
+        {renderCompra
+        ?<Link to={'/cart'} onClick={()=>addItem(item, renderCompra)} className={styles.botonConfirmar}>Confirmar compra</Link>
+        :<ItemCount stock={item.dato.stock} onAdd={OnAdd}></ItemCount>}
       </div>
       <div className={styles.infoProducto}>
         <h3>Detalles del producto</h3>
