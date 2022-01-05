@@ -1,0 +1,31 @@
+.container{
+  margin: 10px 5px;
+  display: flex;
+  flex-flow: row wrap;
+  place-content: center space-between;
+  border-top: 1px solid grey;
+}
+
+.miniDetalle{
+  max-width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  place-content: center start;
+}
+
+.miniImagen{
+  width: 120px;
+  height: 100px;
+}
+
+.numeros{
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  place-content: center space-evenly;
+}
+
+.detail{
+  width: 40%;
+  text-align: center;
+} 
