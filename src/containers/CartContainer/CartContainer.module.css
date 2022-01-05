@@ -44,3 +44,40 @@
   border-top: 3px solid #009C8C;
   background-color: #f2f3f8;
 }
+
+.botonesCarrito{
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  place-content: center space-evenly;
+}
+
+.botonSeguir, .botonConfirmar, .botonBorrar{
+  width: 20%;
+  height: 50px;
+  background-color:#5867dd;
+  border: 2px solid #5867dd;
+  border-radius: 3px;
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row wrap;
+  place-content: center center;
+  margin-top: 25px;
+}
+
+.botonSeguir:hover{
+  background-color: #6c757d;
+  border: 2px solid #6c757d;
+}
+
+.botonConfirmar:hover{
+  background-color: #27e28b;
+  border: 2px solid #27e28b;
+}
+
+.botonBorrar:hover{
+  background-color: #ffc107;
+  border: 2px solid #ffc107;
+}

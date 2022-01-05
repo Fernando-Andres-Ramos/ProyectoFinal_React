@@ -3,6 +3,7 @@ import styles from "./CartContainer.module.css"
 import { Cart } from "../../components/Cart/Cart";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -10,7 +11,7 @@ import { CartContext } from "../../context/cartContext";
 
 export function CartContainer(){
   
-  let [,,,,compra] = useContext (CartContext)
+  let [,,clear,,compra] = useContext (CartContext)
 
   return(
     <>
@@ -28,6 +29,11 @@ export function CartContainer(){
             ?compra.map(producto=><Cart {...producto}/>)
             :<div><p>El carrito esta vacio</p></div>}
           </div>
+        </div>
+        <div className={styles.botonesCarrito}>
+          <NavLink to={`/`} className={styles.botonSeguir}>Seguir comprando</NavLink>
+          <button className={styles.botonConfirmar}>Confirmar y pagar</button>
+          <button className={styles.botonBorrar} onClick={()=>clear()}>Quitar todos los productos</button> 
         </div>
       </div>
     </>

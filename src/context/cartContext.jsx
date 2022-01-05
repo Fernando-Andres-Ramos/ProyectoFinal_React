@@ -12,8 +12,17 @@ export const CustomProvider = ({children}) => {
     function addItem(item, quantity){
        let cartCompra = {item,quantity}
        let cartAux = []
-       cartAux = cartCompra
-       setItems([cartCompra, ...items])
+       if(isInCart(item.dato.id)){
+        console.log(`Esta en el 🛒`)
+        cartCompra = items.find(element => element.item.dato.id==item.dato.id)
+        cartCompra.quantity = cartCompra.quantity += quantity
+        cartAux = [...items]
+       }
+       else{
+           console.log(`No esta en el 🛒`)
+           cartAux = cartCompra
+       }
+       setItems([cartAux, ...items])
     }
 
     function removeItem(itemID){
@@ -22,12 +31,11 @@ export const CustomProvider = ({children}) => {
     }
 
     function clear(){
-        console.log("Contexto limpiado")
+        setItems([])
     }
 
     function isInCart(id){
-    //   if(cartItems)
-    //     cartItems.some(producto=>producto.item.id == item.id)
+        return items && items.some(element => element.item.dato.id === id)
     }
 
     return(
