@@ -5,24 +5,24 @@ export const CartContext = React.createContext()
 export const CustomProvider = ({defaultValue=[],children}) => {
 
 
-    function addItem(item,quantity){
-
+    function addItem(){
+        console.log("Contexto entendido")
     }
 
-    function removeItem(itemId){
-
+    function removeItem(){
+        console.log("Contexto removido")
     }
 
     function clear(){
-
+        console.log("Contexto limpiado")
     }
 
-    function isInCart(id){
-        (id)?true:false;
+    function isInCart(){
+        console.log("Contexto analizado")
     }
 
     return(
-        <CartContext.Provider value={addItem,removeItem,clear,isInCart}>
+        <CartContext.Provider value={[addItem,removeItem,clear,isInCart]}>
             {children}
         </CartContext.Provider>
     )

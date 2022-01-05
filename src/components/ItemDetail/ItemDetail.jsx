@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import styles from "./ItemDetail.module.css"
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
+import { useContext } from "react";
 
 
 export const ItemDetail = (item) => {
 
+  const [addItem,removeItem,clear,isInCart] = useContext(CartContext)
+  clear()
+  isInCart()
+  addItem()
+  removeItem()
   
   const [renderCompra, setRenderCompra] = useState(false)
   
