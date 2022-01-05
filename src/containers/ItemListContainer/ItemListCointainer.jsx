@@ -11,7 +11,6 @@ export function ItemListContainer(greetings){
   const {categoryid} = useParams();
 
   useEffect(()=>{
-    console.log("La ID es " + categoryid)
     setmisProductos(null);
     PromesaProductos();
   },[categoryid])

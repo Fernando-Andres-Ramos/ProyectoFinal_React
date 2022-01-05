@@ -9,17 +9,11 @@ import { useContext } from "react";
 export const ItemDetail = (item) => {
 
   const [addItem,removeItem,clear,isInCart] = useContext(CartContext)
-  clear()
-  isInCart()
-  addItem()
-  removeItem()
   
   const [renderCompra, setRenderCompra] = useState(false)
   
-  function OnAdd(quantityToAdd) {
-    console.log(`Agregaste al carrito ${quantityToAdd}u. de ${item.dato.title}. Por un valor de ${quantityToAdd*item.dato.price}$`)
-    setRenderCompra(quantityToAdd)
-  }
+  const OnAdd = (quantityToAdd) => setRenderCompra(quantityToAdd)
+
 
 
   return (
@@ -29,7 +23,7 @@ export const ItemDetail = (item) => {
       <div className={styles.imgAndCount}>
         <img className={styles.imgProductos} src={item.dato.pictureURL} alt={`Imagen de ${item.dato.title}`}/>
         {renderCompra?
-          <Link to={'/cart'} className={styles.botonConfirmar}>Confirmar compra</Link>:
+          <Link to={'/cart'} onClick={()=>addItem(item, renderCompra)} className={styles.botonConfirmar}>Confirmar compra</Link>:
           <ItemCount stock={item.dato.stock} onAdd={OnAdd}></ItemCount>}
       </div>
       <div className={styles.infoProducto}>

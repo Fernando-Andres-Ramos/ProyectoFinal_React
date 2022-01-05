@@ -10,9 +10,6 @@ export function ItemDetailContainer(){
   const [ ItemElegido, setItemElegido] = useState (null)
 
   const {id} = useParams()
-  useEffect(()=>{
-    console.log("La ID es " + id)
-  },[id])
 
   useEffect(() => {
     promesaItem()
@@ -34,7 +31,6 @@ export function ItemDetailContainer(){
   function promesaItem () {
     getItem().then(
       response => {
-        console.log(`Promesa resuelta`, response)
         setItemElegido(response)
       },
       error => console.log(`Promesa rechazada`,error)
