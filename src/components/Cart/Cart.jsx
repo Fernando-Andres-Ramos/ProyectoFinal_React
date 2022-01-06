@@ -16,7 +16,7 @@ export function Cart (producto){
           </div>
           <div className={styles.numeros}>
             <p className={styles.detail}>{producto.quantity}</p>
-            <p className={styles.detail}>{(producto.quantity)*(producto.item.dato.price)}$</p>
+            <p className={styles.detail}>${(producto.quantity)*(producto.item.dato.price)}</p>
             <div className={styles.detail}>
             <button onClick={()=>removeItem(producto.item.dato.id)} className={styles.buttonRemove}>X</button>
             </div>
