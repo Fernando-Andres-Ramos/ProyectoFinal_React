@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { CardWidget } from '../CardWidget/CardWidget';
+import { CardWidget } from '../CartWidget/CartWidget';
 import style from './NavBar.module.css';
 
 
