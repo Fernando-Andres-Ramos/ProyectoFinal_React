@@ -8,11 +8,15 @@ export const CustomProvider = ({children}) => {
     const [totalCount, setTotalCount] = useState (0);
     const [totalPrice, setTotalPrice] = useState (0);
 
+    useEffect(()=>{
+    setTotalPrice(Cost())
+    setTotalCount(totalItems())
+    },[items])
+
 
     function addItem(item, quantity){
         let cartCompra = {item,quantity}
         let cartAux = []
-        console.log(cartCompra)
         if(isInCart(item.dato.id)){
             cartCompra = items.find(element=>element.item.dato.id == item.dato.id)
             //Modificio la "cantidad" que quiero comprar, esa cantidad es independiente del array "items"
@@ -21,7 +25,8 @@ export const CustomProvider = ({children}) => {
         }
         else
             cartAux = [cartCompra, ...items]
-       setItems(cartAux)
+
+        setItems(cartAux)
     }
 
     function isInCart(id){
@@ -37,9 +42,24 @@ export const CustomProvider = ({children}) => {
         setItems([])
     }
 
+    function Cost (){
+        const precioAux = items.reduce((acc,element)=>{
+            return acc = acc + (element.item.dato.price*element.quantity);
+        },0);
+        return precioAux;
+    }
+
+    function totalItems(){
+        const precioAux = items.reduce((acc,element)=>{
+            return acc = acc + element.quantity;
+        },0);
+        return precioAux;
+    }
+
+
 
     return(
-        <CartContext.Provider value={[addItem,removeItem,clear,isInCart,items]}>
+        <CartContext.Provider value={[addItem,removeItem,clear,isInCart,items,totalPrice,totalCount]}>
             {children}
         </CartContext.Provider>
     )

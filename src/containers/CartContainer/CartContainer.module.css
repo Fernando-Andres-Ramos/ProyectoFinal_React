@@ -31,6 +31,15 @@
   place-content: center space-evenly;
 }
 
+.totalCompra{
+  width: 50%;
+  align-self: flex-end;
+  display: flex;
+  flex-flow: row wrap;
+  place-content: center space-evenly;
+}
+
+
 .detail{
   width: 30%;
   text-align: center;
@@ -42,6 +51,7 @@
   margin-top: 10px;
   padding-top:25px;
   border-top: 3px solid #009C8C;
+  border-bottom: 3px solid #009C8C;
   background-color: #f2f3f8;
 }
 
