@@ -6,9 +6,8 @@ import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetail
 import { CartContainer } from './containers/CartContainer/CartContainer';
 import Footer from './components/Footer/Footer';
 import {CustomProvider} from './context/cartContext'
-
+// import { Modal } from './components/Modal/Modal';
 export function App() {
-
   return (
     <BrowserRouter>
       <CustomProvider>
