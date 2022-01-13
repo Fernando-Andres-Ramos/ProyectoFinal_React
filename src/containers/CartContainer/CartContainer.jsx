@@ -25,7 +25,7 @@ export function CartContainer(){
               <p className={styles.detail}>Quitar producto</p>
             </div>
           <div className={styles.listaProductos} >
-            {compra.length!=0
+            {compra.length!==0
             ?compra.map(producto=><Cart {...producto}/>)
             :<div><p>El carrito esta vacio</p></div>}
           </div>

@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 export const ItemDetail = (item) => {
 
-  const [addItem,removeItem,clear,isInCart] = useContext(CartContext)
+  const [addItem] = useContext(CartContext)
   
   const [renderCompra, setRenderCompra] = useState(false)
   

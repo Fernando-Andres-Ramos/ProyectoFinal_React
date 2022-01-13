@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';

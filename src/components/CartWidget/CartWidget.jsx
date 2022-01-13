@@ -12,7 +12,7 @@ export const CardWidget = () =>{
   return (
     <div className={styles.flexConteiner}>
       <Carrito {...ImageCarrito.img1}/>
-      {cantidad!=0
+      {cantidad!==0
       ?<div className={styles.globoCompra}>{cantidad}</div>
       :<div></div>}
 
