@@ -18,7 +18,7 @@ export const CustomProvider = ({children}) => {
         let cartCompra = {item,quantity}
         let cartAux = []
         if(isInCart(item.dato.id)){
-            cartCompra = items.find(element=>element.item.dato.id == item.dato.id)
+            cartCompra = items.find(element=>element.item.dato.id === item.dato.id)
             //Modificio la "cantidad" que quiero comprar, esa cantidad es independiente del array "items"
             cartCompra.quantity = cartCompra.quantity + quantity
             cartAux = [...items]
@@ -34,7 +34,7 @@ export const CustomProvider = ({children}) => {
     }
 
     function removeItem(itemID){
-        let cartAux = items.filter(element=>element.item.dato.id!=itemID) 
+        let cartAux = items.filter(element=>element.item.dato.id!==itemID) 
         setItems(cartAux)
     }
 

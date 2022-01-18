@@ -75,6 +75,7 @@
   flex-flow: row wrap;
   place-content: center center;
   margin-top: 25px;
+  cursor:pointer
 }
 
 .botonSeguir:hover{

@@ -11,6 +11,7 @@ export function ItemListContainer(){
 
   const {categoryid} = useParams();
 
+
   useEffect(()=>{
     const db = getFirestore();
     if(categoryid){
@@ -26,6 +27,8 @@ export function ItemListContainer(){
       });
     }
   },[categoryid]);
+
+
 
   // useEffect(()=>{
   //   setmisProductos(null);
@@ -69,7 +72,6 @@ export function ItemListContainer(){
   return(
     <div className={styles.container}>
       <ItemList datos={misProductos}></ItemList>
-      {console.log(misProductos)}
     </div>
   )
 }
