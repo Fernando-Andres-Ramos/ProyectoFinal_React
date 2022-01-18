@@ -14,7 +14,7 @@ export function NavBar() {
         <div style={{display:'flex',justifyContent:'space-between'}}>
           <NavLink  to={`/`} style={{fontSize:30,textDecoration:'none'}}>Inicio</NavLink>
           <ul className={style.OpcionesDeUsuario}>
-            <li><a className={style.NavList_link} href="/Home">Log in</a></li>
+            <li><NavLink to={`/signin`} className={style.NavList_link} href="/Home">Log in</NavLink></li>
             <li><NavLink to={`/signup`} className={style.NavList_link}>Sign up</NavLink></li>
             <li><NavLink to={`/cart`} style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></NavLink></li>
           </ul>
