@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 
-export function Auth (){
+export function SignUpForm (){
 
     const [email,setEmail] = useState(false)
     const [password,setPassword] = useState(false)
-
-    
     
     function signUpSubmit (e){
         e.preventDefault()
@@ -22,9 +20,9 @@ export function Auth (){
             });  
     }
 
-
     return(
         <>
+            <h4>REGISTRE UN USUARIO</h4>
             <form>
                 <label htmlFor="email">Correo Electronico</label>
                 <input type="text" id="email" onChange={(ev)=>setEmail(ev.target.value)}></input>

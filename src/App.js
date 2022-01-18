@@ -4,7 +4,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { CartContainer } from './containers/CartContainer/CartContainer';
-import { Auth } from './components/Auth/Auth';
+import {SignUpForm} from './components/SignUpForm/SignUpForm';
 import Footer from './components/Footer/Footer';
 import {CustomProvider} from './context/cartContext'
 // import { Modal } from './components/Modal/Modal';
@@ -18,7 +18,7 @@ export function App() {
             <Route exact path="/category/:categoryid" element={<ItemListContainer/>}/>
             <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route exact path="/cart" element={<CartContainer/>}/>
-            <Route exact path="/signup" element={<Auth/>}></Route>
+            <Route exact path="/signup" element={<SignUpForm />}></Route>
           </Routes>
           <Footer />
       </CustomProvider>
