@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import {getAuth, csignInWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
+import React, { useEffect, useState } from "react"
+import {getAuth, signInWithEmailAndPassword,onAuthStateChanged} from "firebase/auth"
 
 export function SignInForm(){
 
@@ -7,6 +7,11 @@ export function SignInForm(){
     const [email,setEmail] = useState(false)
     const [password,setPassword] = useState(false)
     const [userFinded,setUserFinded] = useState(false)
+
+    useEffect(()=>{
+        console.log(userFinded)
+        logState()
+    },[userFinded])
     
     function signInSubmit (e){
         e.preventDefault()
@@ -14,18 +19,33 @@ export function SignInForm(){
         signInWithEmailAndPassword(auth,email, password)
             .then((userCredencial)=>{
                 const user = userCredencial.user;
-                setUserFinded(user);
+                setUserFinded(user.email);
             })
             .catch((error)=>{
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
             });  
     }
+
+    function logState (){
+        const auth = getAuth();
+        onAuthStateChanged(auth,(user)=>{
+            if(user){
+                const uid = user.uid
+                console.log(uid)
+                console.log(user)
+            }
+            else{
+                console.log("usted cerro sesión")
+            }
+        })
+    }
+    
 
     return(
         <>
             {userFinded?
-            <h1>Bienvenido = {userFinded}</h1>
+            <h1>Bienvenido {userFinded}</h1> 
             :<div>
                 <h4>INGRESE CON SU CORREO Y CONTRASEÑA</h4>
                 <form>
