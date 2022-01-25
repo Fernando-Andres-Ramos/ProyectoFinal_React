@@ -28,47 +28,6 @@ export function ItemListContainer(){
     }
   },[categoryid]);
 
-
-
-  // useEffect(()=>{
-  //   setmisProductos(null);
-  //   PromesaProductos();
-  // },[categoryid])
-
-
-  // useEffect(() => {
-  //   PromesaProductos()
-  // },[])
-
-  // function getProductos (){
-  //   return new Promise ((resolve,reject)=>{
-  //     setTimeout(()=>{
-  //       if (DatosProductos)
-  //       {
-  //         if(categoryid)
-  //         {
-  //           const ProductosEncontrados = DatosProductos.filter(element => element.category === categoryid )
-  //           resolve (ProductosEncontrados)
-  //         }
-  //         else  
-  //           resolve(DatosProductos)
-  //       }
-  //       else 
-  //         reject (new Error ('Error en getProductos'))
-  //     },2000)
-  //   })
-  // }
-
-  // function PromesaProductos () {
-  //   getProductos().then(
-  //     response => {
-  //       setmisProductos(response)
-  //     },
-  //     error => console.log(`Promesa rechazada`,error)
-  //   )
-  //   .catch(error=>console.log(`ERROR`,'Algo salio mal',error))
-  // }
-
   return(
     <div className={styles.container}>
       <ItemList datos={misProductos}></ItemList>
