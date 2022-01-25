@@ -7,30 +7,25 @@ import { NavLink } from "react-router-dom";
 import { getFirestore,collection,addDoc,doc,getDoc} from "firebase/firestore";
 
 
-
-
-
 export function CartContainer(){
-
   
-  
-  let [,,clear,,compra,totalPrice,totalCount] = useContext (CartContext)
+  let [addItem,removeItem,clear,isInCart,compra,totalPrice,totalCount] = useContext (CartContext)
 
   const [orderId,setOrderId] = useState (null)
 
   useEffect(()=>{
-    console.log(`Su N° de orden es ${orderId}`)
-     const db = getFirestore()
-     const orderDoc = doc(db,"orders",`${orderId}`);
-     getDoc(orderDoc).then((copiaDeDatos)=>{
-     console.log(({...copiaDeDatos.data()}));
-     });
+    const db = getFirestore()
+    console.log(`${orderId}`)
+    const orderDoc = doc(db,"orders",`${orderId}`);
+    getDoc(orderDoc).then((copiaDeDatos)=>{
+    console.log(({...copiaDeDatos.data()}));
+    });
   },[orderId])
 
 
   const sendOrder = () =>{
     let order = {
-      buyer: {name: "Nombre de usuario", phone:  "Telefono de usuario", email:"email de usuario"},
+      buyer: {name: "Nombre de usuario", phone: "Telefono de usuario", email:"email de usuario"},
       items: compra,
       total: totalPrice
     }

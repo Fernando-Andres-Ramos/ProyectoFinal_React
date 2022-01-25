@@ -17,7 +17,6 @@ export const ItemDetail = (item) => {
 
 
   return (
-
     <>
       <div className={styles.product}>
       <div className={styles.imgAndCount}>

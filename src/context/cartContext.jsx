@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { getFirestore, doc, updateDoc, getDoc } from "firebase/firestore";
+
 
 export const CartContext = React.createContext()
 
@@ -21,10 +23,13 @@ export const CustomProvider = ({children}) => {
             cartCompra = items.find(element=>element.item.dato.id === item.dato.id)
             //Modificio la "cantidad" que quiero comprar, esa cantidad es independiente del array "items"
             cartCompra.quantity = cartCompra.quantity + quantity
+            discountStockFirebase(cartCompra)
             cartAux = [...items]
         }
-        else
+        else{
+            discountStockFirebase(cartCompra)
             cartAux = [cartCompra, ...items]
+        }
 
         setItems(cartAux)
     }
@@ -34,7 +39,9 @@ export const CustomProvider = ({children}) => {
     }
 
     function removeItem(itemID){
-        let cartAux = items.filter(element=>element.item.dato.id!==itemID) 
+        let cartAux = items.find(element=>element.item.dato.id===itemID)
+        restaurarStockFirebase(cartAux)
+        cartAux = items.filter(element=>element.item.dato.id!==itemID) 
         setItems(cartAux)
     }
 
@@ -56,7 +63,24 @@ export const CustomProvider = ({children}) => {
         return precioAux;
     }
 
+    function discountStockFirebase (itemToDiscount){
+        console.log(itemToDiscount)
+        const db = getFirestore()
+        const itemDoc = doc(db,"items",`${itemToDiscount.item.dato.id}`)
+        getDoc(itemDoc).then((copiaDeDatos)=>{
+            let nuevoStock = copiaDeDatos.data().stock - itemToDiscount.quantity
+            updateDoc(itemDoc,{stock: nuevoStock})
+           });
+        }
 
+     function restaurarStockFirebase (itemToRestoreStock){
+         const db = getFirestore()
+         const itemDoc = doc(db,"items",`${itemToRestoreStock.item.dato.id}`)
+         getDoc(itemDoc).then((copiaDeDatos)=>{
+             let nuevoStock = copiaDeDatos.data().stock + itemToRestoreStock.quantity
+             updateDoc(itemDoc,{stock: nuevoStock})
+            });
+        }
 
     return(
         <CartContext.Provider value={[addItem,removeItem,clear,isInCart,items,totalPrice,totalCount]}>

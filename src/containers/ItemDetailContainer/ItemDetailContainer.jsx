@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 import styles from "./ItemDetailContainer.module.css"
 import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
 import {doc,getDoc,getFirestore} from "firebase/firestore"
-// import { DatosProductos } from "../../mocks/DatosProductos"
 
 
 
