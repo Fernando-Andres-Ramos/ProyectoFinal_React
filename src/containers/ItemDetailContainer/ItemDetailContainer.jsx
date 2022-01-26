@@ -2,22 +2,26 @@ import React, {useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import styles from "./ItemDetailContainer.module.css"
 import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
-import {doc,getDoc,getFirestore} from "firebase/firestore"
-
+import { FirebaseClient } from "../../firebase/client"
 
 
 export function ItemDetailContainer(){
   const [ ItemElegido, setItemElegido] = useState (null)
-
   const {id} = useParams()
+  const firebase = new FirebaseClient();
+
+  const detallesDeProducto = async () => {
+    try {
+      const value = await firebase.getItemById(id)
+      setItemElegido(value)
+    }
+    catch(error){
+      console.log(error)
+    }
+  } 
 
   useEffect(()=>{
-
-    const db = getFirestore();
-    const itemDoc = doc(db,"items",id);
-    getDoc(itemDoc).then((copiaDeDatos)=>{
-      setItemElegido(({id: copiaDeDatos.id, ...copiaDeDatos.data()}));
-    });
+    detallesDeProducto();
   },[]);
 
   return (
