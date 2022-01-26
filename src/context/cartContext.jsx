@@ -64,7 +64,6 @@ export const CustomProvider = ({children}) => {
     }
 
     function discountStockFirebase (itemToDiscount){
-        console.log(itemToDiscount)
         const db = getFirestore()
         const itemDoc = doc(db,"items",`${itemToDiscount.item.dato.id}`)
         getDoc(itemDoc).then((copiaDeDatos)=>{

@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { CardWidget } from '../CartWidget/CartWidget';
 import style from './NavBar.module.css';
-import { onAuthStateChanged } from 'firebase/auth';
 
 
 export function NavBar() {

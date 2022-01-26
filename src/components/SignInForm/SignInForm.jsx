@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import {getAuth, signInWithEmailAndPassword,onAuthStateChanged, updateProfile} from "firebase/auth"
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth"
 
 export function SignInForm(){
 
@@ -23,6 +23,8 @@ export function SignInForm(){
             .catch((error)=>{
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(errorCode)
+                console.log(errorMessage)
             });  
     }
 
