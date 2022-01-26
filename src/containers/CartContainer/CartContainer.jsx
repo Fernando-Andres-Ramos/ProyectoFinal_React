@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { NavLink } from "react-router-dom";
 import { getFirestore,collection,addDoc,doc,getDoc} from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 
 export function CartContainer(){
@@ -24,8 +25,10 @@ export function CartContainer(){
 
 
   const sendOrder = () =>{
+    let auth = getAuth()
+    let dataUsuario = auth.currentUser
     let order = {
-      buyer: {name: "Nombre de usuario", phone: "Telefono de usuario", email:"email de usuario"},
+      buyer: {name: `${dataUsuario.displayName}`, phone: "Telefono de usuario", email:`${dataUsuario.email}`},
       items: compra,
       total: totalPrice
     }

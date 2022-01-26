@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import {getAuth, signInWithEmailAndPassword,onAuthStateChanged} from "firebase/auth"
+import {getAuth, signInWithEmailAndPassword,onAuthStateChanged, updateProfile} from "firebase/auth"
 
 export function SignInForm(){
 
@@ -9,7 +9,6 @@ export function SignInForm(){
     const [userFinded,setUserFinded] = useState(false)
 
     useEffect(()=>{
-        console.log(userFinded)
         logState()
     },[userFinded])
     
@@ -22,23 +21,21 @@ export function SignInForm(){
                 setUserFinded(user.email);
             })
             .catch((error)=>{
-                // const errorCode = error.code;
-                // const errorMessage = error.message;
+                const errorCode = error.code;
+                const errorMessage = error.message;
             });  
     }
 
     function logState (){
         const auth = getAuth();
-        onAuthStateChanged(auth,(user)=>{
-            if(user){
-                const uid = user.uid
-                console.log(uid)
-                console.log(user)
-            }
-            else{
-                console.log("usted cerro sesión")
-            }
-        })
+        const user = auth.currentUser
+        if (user){
+            console.log(user)
+            console.log(user.uid)
+        }
+        else{
+            console.log("usted cerro sesión")
+        }
     }
     
 
