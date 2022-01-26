@@ -4,7 +4,7 @@ import { Cart } from "../../components/Cart/Cart";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { NavLink } from "react-router-dom";
-import { getFirestore,collection,addDoc,doc,getDoc} from "firebase/firestore";
+import { getFirestore,collection,addDoc,doc,getDoc,getDocs,query,where} from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 
@@ -12,11 +12,13 @@ export function CartContainer(){
   
   let [addItem,removeItem,clear,isInCart,compra,totalPrice,totalCount] = useContext (CartContext)
 
+  const db = getFirestore()
+  const [contactUser,setUserSendOrder] = useState(null)
   const [orderId,setOrderId] = useState (null)
 
   useEffect(()=>{
-    const db = getFirestore()
     console.log(`${orderId}`)
+    console.log(contactUser)
     const orderDoc = doc(db,"orders",`${orderId}`);
     getDoc(orderDoc).then((copiaDeDatos)=>{
     console.log(({...copiaDeDatos.data()}));
@@ -25,16 +27,26 @@ export function CartContainer(){
 
 
   const sendOrder = () =>{
+    //Obtengo el usuario logeado de la base de datos de Auth
     let auth = getAuth()
     let dataUsuario = auth.currentUser
-    let order = {
-      buyer: {name: `${dataUsuario.displayName}`, phone: "Telefono de usuario", email:`${dataUsuario.email}`},
-      items: compra,
-      total: totalPrice
-    }
-    const db = getFirestore()
-    const orderCollection = collection(db,"orders")
-    addDoc(orderCollection,order).then(({id}) => setOrderId(id))
+
+
+    //Con los datos del usuario logeado, busco la info en el database para obtener telefono y otros campos.
+    const itemCollection = query(collection(db,"contactUserData"),where("email","==",`${dataUsuario.email}`));
+      getDocs(itemCollection).then((copiaDeDatos)=>{
+        setUserSendOrder(copiaDeDatos.docs.map((doc)=>({id: doc.id, ...doc.data()})));
+      });
+      
+      
+    //Envio la orden a la base de datos de "Orders", tomando la info de Auth y de la database de Users
+      let order = {
+        buyer: {name: `${dataUsuario.displayName}`, phone: `numero de telefono`, email:`${dataUsuario.email}`},
+        items: compra,
+        total: totalPrice
+      }
+      const orderCollection = collection(db,"orders")
+      addDoc(orderCollection,order).then(({id}) => setOrderId(id))
   }
 
   return(

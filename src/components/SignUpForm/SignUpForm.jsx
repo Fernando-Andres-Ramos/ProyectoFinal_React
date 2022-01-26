@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import {getAuth, createUserWithEmailAndPassword, updateProfile, updatePhoneNumber} from "firebase/auth"
+import {getAuth, createUserWithEmailAndPassword, updateProfile} from "firebase/auth"
 import styles from "./SignUpForm.module.css"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 
 export function SignUpForm (){
     const [nombreUsuario,setNombreUsuario] = useState(false)
@@ -16,7 +17,8 @@ export function SignUpForm (){
         createUserWithEmailAndPassword(auth,email,password)
         .then((userCredencial)=>{
             console.log(userCredencial)
-            updateNombre()
+            updateFirestoreAuthData()
+            updateFirestoreContactData()
         })
         .catch((error)=>{
             const errorCode = error.code;
@@ -26,7 +28,7 @@ export function SignUpForm (){
     }
 
 
-    function updateNombre(){
+    function updateFirestoreAuthData(){
         updateProfile(auth.currentUser,{
             displayName:`${nombreUsuario}`,
         }).then(()=>{
@@ -34,6 +36,17 @@ export function SignUpForm (){
         }).catch(()=>{
             console.log("Error al actualizar")
         });
+    }
+
+    function updateFirestoreContactData(){
+        let UserData = {
+            name: `${nombreUsuario}`,
+            email: `${email}`,
+            number: `${telefono}`
+          }
+        const db = getFirestore()
+        const orderCollection = collection(db,"contactUserData")
+        addDoc(orderCollection,UserData).then(({id}) => console.log("La Id del FirestoreContactData es " + id))
     }
  
 
