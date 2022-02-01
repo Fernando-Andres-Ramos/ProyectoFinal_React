@@ -48,6 +48,9 @@ export class FirebaseClient{
     catch(error){
       console.error('Busqueda de productos', error)
     }
+
+
+    
   }
 }
 

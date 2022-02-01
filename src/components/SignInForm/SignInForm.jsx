@@ -33,7 +33,7 @@ export function SignInForm(){
         const user = auth.currentUser
         if (user){
             console.log(user)
-            console.log(user.uid)
+            console.log(`Su uid es: ${user.uid}`)
         }
         else{
             console.log("usted cerro sesión")

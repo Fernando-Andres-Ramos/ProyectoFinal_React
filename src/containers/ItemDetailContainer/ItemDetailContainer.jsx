@@ -10,6 +10,9 @@ export function ItemDetailContainer(){
   const {id} = useParams()
   const firebase = new FirebaseClient();
 
+
+//Solicitar el producto que cumplan con la id. Se solicita al client.js
+
   const detallesDeProducto = async () => {
     try {
       const value = await firebase.getItemById(id)

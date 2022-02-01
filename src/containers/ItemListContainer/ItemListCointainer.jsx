@@ -11,6 +11,7 @@ export function ItemListContainer(){
   const {categoryid} = useParams();
   const firebase = new FirebaseClient();
 
+  //Solicitar los productos que cumplan con la categoria. Se solicita al client.js
   const ProductosEncontrados = async () => {
     try {
       const value = await firebase.itemsCategory(categoryid)
