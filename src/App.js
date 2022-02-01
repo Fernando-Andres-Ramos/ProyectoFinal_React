@@ -7,8 +7,8 @@ import { CartContainer } from './containers/CartContainer/CartContainer';
 import {SignUpForm} from './components/SignUpForm/SignUpForm';
 import { SignInForm } from './components/SignInForm/SignInForm';
 import Footer from './components/Footer/Footer';
-import {CustomProvider} from './context/cartContext'
-// import { Modal } from './components/Modal/Modal';
+import {CustomProvider} from './context/cartContext';
+
 export function App() {
   return (
     <BrowserRouter>
