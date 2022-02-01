@@ -38,7 +38,6 @@ export function SignUpForm (){
         addDoc(orderCollection,UserData).then(({id}) => console.log("La Id del FirestoreContactData es " + id))
     }
  
-
     return(
         <>
         <fieldset className={styles.containerForm}>

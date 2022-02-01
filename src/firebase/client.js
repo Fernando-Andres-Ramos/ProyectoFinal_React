@@ -17,7 +17,6 @@ const db = getFirestore();
 
 export class FirebaseClient{
 
-
   //Función para buscar un solo item segun la id recibida desde el componente solicitante
   async getItemById(itemId){
     try{
@@ -47,10 +46,21 @@ export class FirebaseClient{
     }
     catch(error){
       console.error('Busqueda de productos', error)
+    }   
+  }
+
+    //Función para buscar el usuario en la base de datos
+  async getUserByEmail(userEmail){
+    try{
+      if(userEmail){
+        const itemCollectionUser = query(collection(db,"contactUserData"),where("email","==",userEmail));
+        let datosBuscados = await getDocs(itemCollectionUser);
+        return datosBuscados.docs.map((doc)=>({id: doc.id, ...doc.data()}));
+      }
     }
-
-
-    
+    catch(error){
+      console.error('Busqueda de productos', error)
+    }   
   }
 }
 
