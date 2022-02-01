@@ -5,7 +5,7 @@ import { ItemListContainer } from './containers/ItemListContainer/ItemListCointa
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { CartContainer } from './containers/CartContainer/CartContainer';
 import {SignUpForm} from './components/SignUpForm/SignUpForm';
-import { SignInForm } from './components/SignInForm/SignInForm';
+// import { SignInForm } from './components/SignInForm/SignInForm';
 import Footer from './components/Footer/Footer';
 import {CustomProvider} from './context/cartContext';
 
@@ -20,7 +20,7 @@ export function App() {
             <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route exact path="/cart" element={<CartContainer/>}/>
             <Route exact path="/signup" element={<SignUpForm />}></Route>
-            <Route exact path="/signin" element={<SignInForm />}></Route>
+            {/* <Route exact path="/signin" element={<SignInForm />}></Route> */}
           </Routes>
           <Footer />
       </CustomProvider>

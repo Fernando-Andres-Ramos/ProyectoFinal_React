@@ -26,7 +26,8 @@ export function CartContainer(){
 //Esta función revisa el usuario logeado, luego verifica en el dataBase de usuarios por datos y los carga.
 function buscarDatosUsuario(){
     //Obtengo el usuario logeado de la base de datos de Auth
-    let dataUsuario = auth.currentUser
+    let dataUsuario = localStorage.getItem("usuarioLogueado")
+    console.log(dataUsuario)
     if(dataUsuario){
       //Con los datos del usuario logeado, busco la info en el database para obtener telefono y otros campos.
       const itemCollection = query(collection(db,"contactUserData"),where("email","==",`${dataUsuario.email}`));
