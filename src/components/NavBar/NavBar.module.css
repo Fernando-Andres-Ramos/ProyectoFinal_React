@@ -17,7 +17,7 @@
 .Nav{
   padding: 20px;
   width: 100%;
-  background-color: aquamarine;
+  background-color: #7fffd4;
 }
 
 .OpcionesDeUsuario{
@@ -41,11 +41,44 @@
 }
 
 .NavList_link{
+  font-weight: bold;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #005048;
 }
 
 li{
   width: auto;
   text-align: center;
+  min-height: 30px;
+  border-radius: 5px;
+}
+
+li:hover{
+  background-color: whitesmoke;
+}
+
+.buttonLogOut{
+  margin-top: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;  
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+  text-align: center;
+  color: #005048;
+}
+
+.homeLink{
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 35px;
+  text-align: center;
+  color: #005048;
+}
+
+.homeLink:hover{
+  background-color: whitesmoke;
 }

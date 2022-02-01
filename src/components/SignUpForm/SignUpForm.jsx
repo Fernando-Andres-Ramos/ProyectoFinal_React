@@ -8,21 +8,8 @@ export function SignUpForm (){
     const [email,setEmail] = useState(false)
     const [password,setPassword] = useState(false)
 
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-    class Usuario {
-        constructor (nombre,telefono,email,password){
-          this.nombre=nombre;
-          this.telefono=telefono;
-          this.email=email;
-          this.password=password;
-        }
-      }
-
     function signUpSubmit(e){
         e.preventDefault()
-        const usuario = new Usuario(nombreUsuario,telefono,email,password)
-        usuarios.push(usuario)
         updateFirestoreContactData();
         document.getElementById("SignUpForm").reset();
     }
@@ -31,17 +18,18 @@ export function SignUpForm (){
         let UserData = {
             name: `${nombreUsuario}`,
             email: `${email}`,
-            number: `${telefono}`
+            number: `${telefono}`,
+            pass: `${password}`
           }
         const db = getFirestore()
-        const orderCollection = collection(db,"contactUserData")
-        addDoc(orderCollection,UserData).then(({id}) => console.log("La Id del FirestoreContactData es " + id))
+        const contactCollection = collection(db,"contactUserData")
+        addDoc(contactCollection,UserData).then(({id}) => console.log("La Id del FirestoreContactData es " + id))
     }
  
     return(
         <>
         <fieldset className={styles.containerForm}>
-            <legend>REGISTRE UN USUARIO</legend>
+            <legend><h3>REGISTRE UN USUARIO</h3></legend>
             <form id="SignUpForm" className={styles.formRegistro}>
                 <input type="text" id="name" placeholder="Nombre" className={styles.inputSignUp} onChange={(ev)=>setNombreUsuario(ev.target.value)}></input>
                 <input type="phone" id="telefono" placeholder="Telefono"  className={styles.inputSignUp} onChange={(ev)=>setTelefono(ev.target.value)}></input>

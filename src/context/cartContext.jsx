@@ -9,6 +9,7 @@ export const CustomProvider = ({children}) => {
     const [items,setItems] = useState([]);
     const [totalCount, setTotalCount] = useState (0);
     const [totalPrice, setTotalPrice] = useState (0);
+    const [userState, setUserState] = useState (false);
 
     useEffect(()=>{
     setTotalPrice(Cost())
@@ -81,8 +82,16 @@ export const CustomProvider = ({children}) => {
             });
         }
 
+        function logUser(user) {
+            if(user)
+                setUserState(user)
+            else
+                setUserState(false)
+        }
+
+
     return(
-        <CartContext.Provider value={[addItem,removeItem,clear,isInCart,items,totalPrice,totalCount]}>
+        <CartContext.Provider value={[addItem,removeItem,clear,isInCart,items,totalPrice,totalCount,userState,logUser]}>
             {children}
         </CartContext.Provider>
     )

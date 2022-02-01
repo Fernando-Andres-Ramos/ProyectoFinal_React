@@ -1,11 +1,13 @@
 .containerForm{
   width: auto;
+  min-height: 50vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
 }
 
 .formRegistro{
+  margin-top: 25px;
   width: 35%;
   display: flex;
   flex-flow: column nowrap;

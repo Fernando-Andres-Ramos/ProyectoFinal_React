@@ -50,13 +50,23 @@ export class FirebaseClient{
   }
 
     //Función para buscar el usuario en la base de datos
-  async getUserByEmail(userEmail){
+  async getUserByEmail(userEmail,pass){
     try{
       if(userEmail){
         const itemCollectionUser = query(collection(db,"contactUserData"),where("email","==",userEmail));
         let datosBuscados = await getDocs(itemCollectionUser);
-        return datosBuscados.docs.map((doc)=>({id: doc.id, ...doc.data()}));
+        if (datosBuscados.docs.length!==0){
+          let datosFiltrados = datosBuscados.docs.map((doc)=>({id: doc.id, ...doc.data()}));
+          if(datosFiltrados[0].pass===pass)
+            return datosFiltrados
+          else
+            return 3;
+        }
+        else
+          return 2;
       }
+      else
+        return 1;
     }
     catch(error){
       console.error('Busqueda de productos', error)

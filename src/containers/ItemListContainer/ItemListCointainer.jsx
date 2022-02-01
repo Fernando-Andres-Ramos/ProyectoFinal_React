@@ -15,7 +15,6 @@ export function ItemListContainer(){
   const ProductosEncontrados = async () => {
     try {
       const value = await firebase.itemsCategory(categoryid)
-      console.log(value)
       setmisProductos(value)
     }
     catch(error){
