@@ -1,38 +1,25 @@
 .product{
+  width: 20%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: justify;
   margin: 20px 5px;
-  width: 20%;
-  height: 600px;
   background-color: white;
   border: 1px inset;
 }
 
 .imgProductos{
-  width: 250px;
-  height: 200px;
+  width: 100%;
   border-bottom: 1px solid grey;
 }
 
-@media (max-width: 1100px) {
-  .imgProductos{
-    width: 175px;
-    height: 150px;
-  }
-}
-
-@media (max-width: 600px) {
-  .imgProductos{
-    width: 100px;
-    height: 75px;
-  }
-}
 
 .infoProducto{
-  margin-top: 25px;
+  padding: 5px 10px;
+  max-width: 85%;
   font-size: 20px;
 }
 
@@ -46,17 +33,55 @@
 }
 
 .botonDetalles{
-  width: 100%;
+  width: 99%;
   height: 50px;
   text-decoration: none;
-  border:none;
+  background-color:#5867dd;
+  border: 2px solid #5867dd;
+  border-radius: 3px;
+  color: white;
+  font-size: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top:1px solid rgb(0, 255, 136);
+  margin-top: 25px;
+  cursor:pointer;
+  text-align: center;
 }
 
 .botonDetalles:hover{
-  background-color: rgb(0, 255, 136);
-  color:black
+  background-color: #27e28b;
+  border: 2px solid #27e28b;
+}
+
+@media (max-width: 1200px) {
+  .botonDetalles{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .botonDetalles{
+    font-size: 18px;
+  }
+
+  .product{
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .botonDetalles{
+    font-size: 18px;
+  }
+
+  .product{
+    width: 40%;
+  }
+}
+
+@media (max-width: 475px) {
+ .product{
+   width: 90%;
+ }
 }

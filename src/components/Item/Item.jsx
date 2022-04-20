@@ -11,7 +11,7 @@ export const Item = ({id, title, description, price, pictureURL,cattegory}) => {
       <div className={styles.infoProducto}>
         <h3 className={styles.subtituloProduct}>{title}</h3>
         <p>{description}</p>
-        <h4 className={styles.precio}>${price}</h4>
+        <h4 className={styles.precio}>Precio: ${price}</h4>
       </div>
       <NavLink className={styles.botonDetalles} to={`/item/${id}`}>Ver mas detalles aqui</NavLink>    
     </div>
