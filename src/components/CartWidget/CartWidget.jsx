@@ -7,13 +7,13 @@ import styles from './CartWidget.module.css'
 
 export const CardWidget = () =>{
 
-  const [,,,,,,cantidad] = useContext(CartContext)
+  const [addItem,removeItem,clear,isInCart,items,totalPrice,totalCount,userState,logUser] = useContext(CartContext)
 
   return (
     <div className={styles.flexConteiner}>
       <Carrito {...ImageCarrito.img1}/>
-      {cantidad!==0
-      ?<div className={styles.globoCompra}>{cantidad}</div>
+      {totalCount!==0
+      ?<div className={styles.globoCompra}>{totalCount}</div>
       :<div></div>}
 
     </div>
