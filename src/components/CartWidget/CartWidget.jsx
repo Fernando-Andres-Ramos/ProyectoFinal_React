@@ -11,6 +11,7 @@ export const CardWidget = () =>{
 
   return (
     <div className={styles.flexConteiner}>
+      <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="una imagen" width={"50px"} />
       {/* <Carrito {...ImageCarrito.img1}/>
       {totalCount!==0
       ?<div className={styles.globoCompra}>{totalCount}</div>
