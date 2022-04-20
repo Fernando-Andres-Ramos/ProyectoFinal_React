@@ -29,7 +29,7 @@ export function ItemDetailContainer(){
 
   return (
     <div className={styles.container}>
-      {ItemElegido?<ItemDetail dato={ItemElegido}/>:<span className={styles.loadingText}>Buscando información</span>}
+      {ItemElegido?<ItemDetail dato={ItemElegido}/>:<span className={styles.loadingText}>Loading...</span>}
     </div>
   );
 }

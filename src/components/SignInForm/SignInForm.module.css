@@ -47,7 +47,7 @@
 }
 
 .mensajeBienvenida{
-  align-self: flex-end;
+  align-self: center;
   font-size: 35px;
   color: green;
   width: 100%;

@@ -10,7 +10,7 @@ export function ItemList (Items){
       <div className={styles.itemListContainer}>
         { Items.datos 
         ? Items.datos.map(producto => <Item key={producto.id}{...producto} />) 
-        : <span className={styles.loadingText}>Cargando detalle de productos...</span>}
+        : <span className={styles.loadingText}>Loading...</span>}
       </div>
   );
 }
