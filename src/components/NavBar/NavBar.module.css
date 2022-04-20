@@ -33,6 +33,7 @@
 .NavList{
   height: auto;
   margin-top: 75px;
+  padding: 0%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -51,8 +52,8 @@
 li{
   width: auto;
   text-align: center;
-  min-height: 30px;
-  border-radius: 5px;
+  /* min-height: 30px; */
+  /* border-radius: 5px; */
 }
 
 li:hover{
@@ -81,4 +82,83 @@ li:hover{
 
 .homeLink:hover{
   background-color: whitesmoke;
+}
+
+@media (max-width: 1200px) {
+  .Titulo{
+    font-size: 3.2rem;
+  }
+
+  .NavList_link{
+    font-size: 21px;
+  }
+
+  .homeLink{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Titulo{
+    font-size: 3rem;
+  }
+
+  .NavList_link{
+    font-size: 18px;
+  }
+
+  .homeLink{
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Titulo{
+    font-size: 2.7rem;
+  }
+
+  .homeLink{
+    font-size: 22px;
+  }
+
+  .OpcionesDeUsuario{
+    width: 45%;
+  }
+}
+
+@media (max-width: 475px) {
+  .Titulo{
+    font-size: 2.4rem;
+  }
+
+  .NavList{
+    justify-content:space-between;
+  }
+
+  .OpcionesDeUsuario{
+    width: 65%;
+  }
+
+  .NavList{
+    margin-top: 45px;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .Titulo{
+    font-size: 2rem;
+  }
+
+  .OpcionesDeUsuario{
+    width: 65%;
+  }
+
+  .NavList{
+    margin-top: 25px;
+    min-width: 100%;
+    flex-direction: column;
+    justify-content:space-between;
+    font-size: 14px;
+  }
 }
