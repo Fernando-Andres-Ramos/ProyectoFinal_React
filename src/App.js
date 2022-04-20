@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {CustomProvider} from './context/cartContext';
 import { NavBar } from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import { ItemListContainer } from './containers/ItemListContainer/ItemListCointainer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
 import { CartContainer } from './containers/CartContainer/CartContainer';
 import {SignUpForm} from './components/SignUpForm/SignUpForm';
 import { SignInForm } from './components/SignInForm/SignInForm';
-import Footer from './components/Footer/Footer';
-import {CustomProvider} from './context/cartContext';
 
 export function App() {
   return (
