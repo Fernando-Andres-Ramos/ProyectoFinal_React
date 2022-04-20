@@ -43,3 +43,10 @@
   background-color: #dc3545;
   border: 2px solid #dc3545;
 }
+
+@media (max-width: 600px) {
+  .buttonRemove{
+    width: 30px;
+    height: 30px;
+  }
+}

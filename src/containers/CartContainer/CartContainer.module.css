@@ -82,7 +82,8 @@
   flex-flow: row wrap;
   place-content: center center;
   margin-top: 25px;
-  cursor:pointer
+  cursor:pointer;
+  text-align: center;
 }
 
 .botonSeguir:hover{
@@ -98,4 +99,78 @@
 .botonBorrar:hover{
   background-color: #ffc107;
   border: 2px solid #ffc107;
+}
+
+@media (max-width: 1200px) {
+  .botonSeguir, .botonConfirmar, .botonBorrar{
+    font-size: 22px;
+    width:20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .botonSeguir, .botonConfirmar, .botonBorrar{
+    font-size: 18px;
+    width:25%;
+  }
+
+  .titulosColumnas{
+    width: 95%;
+  }
+
+  .subtituloCart{
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tituloCart{
+    font-size: 24px;
+  }
+
+  .subtituloCart{
+    font-size: 18px;
+  }
+
+  .container{
+    padding: 10px 10px;
+  }
+  
+  .titulosColumnas{
+    width: 95%;
+    font-size: 18px;
+  }
+
+  .detail{
+    font-size: 10x;
+  }
+  .botonSeguir, .botonConfirmar, .botonBorrar{
+    font-size: 18px;
+    width: 27.5%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .titulosColumnas{
+    font-size: 16px;
+  }
+
+  .botonSeguir, .botonConfirmar, .botonBorrar{
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 475px) {
+  .titulosColumnas{
+    font-size: 14px;
+  }
+
+  .botonSeguir, .botonConfirmar, .botonBorrar{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
 }
