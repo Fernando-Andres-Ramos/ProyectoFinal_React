@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { CardWidget } from '../CartWidget/CartWidget';
+// import { CardWidget } from '../CartWidget/CartWidget';
 import style from './NavBar.module.css';
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
@@ -20,7 +20,7 @@ export function NavBar() {
             ?<li><button className={style.buttonLogOut} onClick={()=>logUser(false)} >Cerrar Sesión</button></li>
             :<li><NavLink to={`/signin`} className={style.NavList_link}>Log in</NavLink></li>}
             <li><NavLink to={`/signup`} className={style.NavList_link}>Sign up</NavLink></li>
-            <li><NavLink to={`/cart`} style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></NavLink></li>
+            {/* <li><NavLink to={`/cart`} style={{cursor:'pointer',background:'none',border:'none'}}><CardWidget /></NavLink></li> */}
           </ul>
         </div>
         <ul className={style.NavList}>
