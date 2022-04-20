@@ -45,3 +45,28 @@
   background-color: #27e28b;
   border: 2px solid #27e28b;
 }
+
+@media (max-width: 1200px) {
+  .formRegistro{
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .formRegistro{
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .formRegistro{
+    width: 75%;
+  }
+}
+
+
+@media (max-width: 475px) {
+  .formRegistro{
+    width: 90%;
+  }
+}
